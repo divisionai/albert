@@ -273,7 +273,8 @@ def get_masked_lm_output(bert_config, input_tensor, output_weights,project_weigh
     label_ids = tf.reshape(label_ids, [-1])
     label_weights = tf.reshape(label_weights, [-1])
 
-    one_hot_labels = tf.one_hot(label_ids, depth=bert_config.vocab_size, dtype=tf.float32)
+    one_hot_labels = tf.one_hot(
+		label_ids, depth=bert_config.vocab_size, dtype=tf.float32)
 
     # The `positions` tensor might be zero-padded (if the sequence is too
     # short to have the maximum number of predictions). The `label_weights`
