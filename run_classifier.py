@@ -890,14 +890,12 @@ def main(_):
   tf.logging.set_verbosity(tf.logging.INFO)
 
   processors = {
-  	  "cola": ColaProcessor,
+      "cola": ColaProcessor,
       "mnli": MnliProcessor,
       "mrpc": MrpcProcessor,
       "xnli": XnliProcessor,
       "sentence_pair": SentencePairClassificationProcessor,
       "lcqmc_pair":LCQMCPairClassificationProcessor
-
-
   }
 
   tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
